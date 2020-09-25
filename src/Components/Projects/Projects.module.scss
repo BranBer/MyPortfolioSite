@@ -1,0 +1,87 @@
+@import "../../Designs/Base";
+
+@keyframes spaceTravel
+{
+    from {background-size: 50%}
+    to {background-size: 300%;}
+}
+
+.ProjectsContainer{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-image:
+    linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0, 17, 255, .7), rgba(0, 17, 255, .5)),
+    url('/Assets/stars.png');
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: 50% 50%;
+
+    color: $base-color;
+    font-family: 'Raleway';
+
+    animation: spaceTravel 80s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    
+    .ProjectsContent{
+        height: 100%;
+        width: 75%;
+        background-color: rgba(0,0,0,0.75);
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    .ProjectsHeader{
+        padding: 0 2em 0 2em;
+        row-gap: 1em;
+
+        overflow-y: scroll;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        h1{
+            font-weight: 100;
+            margin: .5em 0 10px 0;
+            font-size: 100px;
+        }
+
+        .ProjectsFilter{
+            
+            //border-top: 1px solid $base-color;
+            display: flex;
+            flex-wrap: wrap;
+            width: auto;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            column-gap: 2em;
+            padding-top: 1em;
+
+            .ProjectFilter
+            {
+                color: black;
+                padding: .5em;
+                background-color: $base-color;
+                border-radius: 50px;
+                margin-bottom: 1em;
+                margin-top: 1em;
+
+                transition: padding 1s ease-in;
+
+                &:hover{
+                    padding: 1em;
+                }
+            }
+        }
+    }
+}

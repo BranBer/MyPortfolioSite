@@ -1,0 +1,169 @@
+@import "../../Designs/Base";
+
+@keyframes spaceTravel
+{
+    from {background-position: 0% 0%;}
+    to {background-position: 100% 100%;}
+}
+
+
+
+.IntroContainer{
+
+    width: 100%;
+    height: 100%;
+    background-image:
+    linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0, 17, 255, .7), rgba(0, 17, 255, .5)),
+    url('/Assets/Galaxy.png');
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: 50% 50%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    animation: spaceTravel 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+}
+
+.IntroContent{
+    //color: lightgoldenrodyellow;
+    padding: 0 2em 0 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+    width: 40%;
+    color: $base-color;
+    font-family: 'Raleway';
+    row-gap: 1em;
+
+    background-color: rgba(0,0,0,.6);
+
+    
+    h1{
+        font-size: 100px;
+        font-weight: 150;
+        margin: .75em 0 0 0;
+        transition: font-size 1s ease-in-out;
+    }
+
+    p{
+        width: 75%;
+        font-weight: 150;
+        font-size: 20px;
+    }
+
+    hr{
+        border: none;
+        border-top: 1px solid $base-color;
+        margin: 2em;
+        width: 70%;
+        transition: width 1s ease-in-out;
+    }
+
+    .ImageContainer{
+        width: 15em;
+        height: 15em;
+        background-image: linear-gradient(0deg, rgba(0, 17, 255, .25), rgba(0, 17, 255, .25)), url('/Assets/brandon.jpg');
+        background-blend-mode: difference;
+        background-size: cover;
+        background-position: 100% 50%;
+        border-radius: 500px;
+    }
+
+    .SocialMediaContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        column-gap: 1em;
+        height: 3em;
+
+        #linkedin{
+            background: url('/Assets/linkedin.png'), $base-color;
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+        #facebook{
+            background: url('/Assets/facebook.png'), $base-color;
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+        #twitter{
+            background: url('/Assets/twitter.png'), $base-color;
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+        #github{
+            background: url('/Assets/github.png'), $base-color;
+            background-size: cover;
+            background-blend-mode: darken;
+        }
+
+        .SocialMediaIcon{
+            height: 2em;
+            width: 2em;
+            border-radius: 5px;
+
+            transition: all .5s ease-in-out;
+            transition-property: height, width;
+
+            &:hover{
+                background: url('/Assets/twitter.png'), $base-color;
+                cursor: pointer;
+                height: 3em;
+                width: 3em;
+            }
+        }
+    }
+
+    .NavBar{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        column-gap: 2em;
+        height: 26px;
+
+        
+        .NavOption{
+            text-decoration: none;
+            color: $base-color;
+            font-size: 20px;
+            transition: font-size 1s ease-in-out;
+
+            &:hover{
+                font-size: 26px;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .IntroContent{
+        width: 60%;
+        h1
+        {
+            font-size: 90px;
+        }
+
+        p{
+            width: 100%;
+            font-size: 20px;
+        }
+
+        hr{
+            width: 90%;
+        }
+    }
+
+}
