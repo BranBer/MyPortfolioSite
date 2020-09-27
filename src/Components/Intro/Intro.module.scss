@@ -3,7 +3,7 @@
 @keyframes spaceTravel
 {
     from {background-position: 0% 0%;}
-    to {background-position: 100% 100%;}
+    to {background-position: 60% 60%;}
 }
 
 
@@ -23,7 +23,7 @@
     flex-direction: row;
     justify-content: center;
 
-    animation: spaceTravel 20s;
+    animation: spaceTravel 10s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
@@ -40,7 +40,7 @@
     justify-content: flex-start;
     width: 40%;
     color: $base-color;
-    font-family: 'Raleway';
+    font-family: $primary-font;
     row-gap: 1em;
 
     background-color: rgba(0,0,0,.6);
@@ -129,7 +129,7 @@
     .NavBar{
         display: flex;
         flex-direction: row;
-        align-items: flex-end;
+        align-items: flex-start;
         column-gap: 2em;
         height: 26px;
 
@@ -149,6 +149,14 @@
 }
 
 @media only screen and (max-width: 1200px) {
+
+    .IntroContainer{
+        animation: spaceTravel 30s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+    }
+
     .IntroContent{
         width: 60%;
         h1

@@ -1,0 +1,80 @@
+@import '../../Designs/Base';
+
+.Project{
+    width: 60vw;
+    height: 60vw;
+
+    margin: 1em;
+
+    background-color: $base-color;
+    background-size: cover;
+
+    border: 5px solid $base-color;
+
+    cursor: pointer;
+
+    .ProjectDescription{
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1em;
+
+        text-align: center;
+
+
+        background-image: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.25));
+        transition: opacity 1s ease-in-out;       
+
+        h2{
+            margin: 0;
+            padding-top: 1em;
+            font-size: 4vw;
+            color: $base-color;
+        }
+
+        .Tags{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            width: 90%;
+            column-gap: .25em;
+            row-gap: .25em;
+
+            .Tag{
+                padding: .5vw;
+                border: 3px solid $base-color;
+                color: $base-color;
+                background-color: rgba(0,0,0,.25);
+            }
+        }
+
+        button{
+            margin-bottom: 1em;
+            padding: 1vw;
+            background-color: $base-color;
+        }
+
+        &:hover{
+                opacity: 1; 
+                background-size: cover;
+                          
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    .Project {
+        width: 22vw;
+        height: 22vw;
+
+        .ProjectDescription h2{
+            font-size: 2vw;
+        }
+    }
+}

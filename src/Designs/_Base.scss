@@ -1,10 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
 
-$base-color: lightblue; 
+$base-color: #add8e6; 
+$complement-color: #522719;
+$analog-color1: #3b4a4f;
+$primary-font: 'Raleway';
+
+:export {
+    baseColor: $base-color;
+    complementColor: $complement-color;
+    analogColor1: $analog-color1;
+}
+
+button
+{
+    outline: none;
+    border: none;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
 
 ::-webkit-scrollbar{
-    background-color: transparent;
+    width: 0;
+
 }
 
 ::-webkit-scrollbar-corner{
