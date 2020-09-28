@@ -1,8 +1,8 @@
 @import '../../Designs/Base';
 
 .Project{
-    width: 60vw;
-    height: 60vw;
+    width: 32vw;
+    height: 32vw;
 
     margin: 1em;
 
@@ -11,30 +11,43 @@
 
     border: 5px solid $base-color;
 
-    cursor: pointer;
+    transition: all 2s ease-in-out;
+    transition-property: height, width;
+
+    
 
     .ProjectDescription{
         opacity: 0;
         height: 100%;
         width: 100%;
+        position: relative;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         row-gap: 1em;
-
+        overflow-y: scroll;
         text-align: center;
 
 
-        background-image: linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,.25));
+        background-image: linear-gradient(to top, rgba(0,0,0,.7), rgba(0,0,0,.3));
+        background-size: cover;
         transition: opacity 1s ease-in-out;       
+
+        hr{
+            width: 75%;
+            border: none;
+            border-bottom: 1px solid $base-color;
+            background-color: $base-color;
+        }
 
         h2{
             margin: 0;
             padding-top: 1em;
-            font-size: 4vw;
+            font-size: 2vw;
             color: $base-color;
+            width: 90%;
         }
 
         .Tags{
@@ -53,28 +66,175 @@
             }
         }
 
+        .url{
+            cursor: pointer;
+            position: relative;
+            align-self: center;
+
+            width: 90%;
+            overflow: hidden;
+            height: auto;
+            background-color: rgba(0,0,0,0);
+
+            transition: background-color .8s linear;            
+
+            .Link{
+                text-decoration: none;
+                color: $base-color;
+                text-align: center;
+                color: $base-color;
+            }
+
+            label{
+                padding: 0 10px 0 10px;
+            }
+
+            &::before{
+                content: '';
+                border-right: 4px solid $base-color;
+                display: block;
+                position: absolute;
+                transform: translate(0%, 100%);
+                transition: transform .2s linear;
+                transition-delay: 0s;
+                right: 0;
+                height: 100%;
+                top: 2px;
+
+            }
+
+            .urlBackgroundTop
+            {
+                height: 0;
+                border-bottom: 4px solid $base-color;
+                transform: translate(110%, 0%);
+                margin-bottom: 1em;
+                transition: transform .2s linear;
+                transition-delay: .6s;
+
+            }
+
+            &::after {
+                content: '';
+                border-left: 8px solid $base-color;
+                display: block;
+                position: absolute;
+                height: 0%;
+                transition: height .2s linear;
+                transition-delay: .4s;
+                left: 0;
+                top: 2px;
+            }    
+
+            .urlBackgroundBottom{
+
+                height: 0;
+                border-bottom: 4px solid $base-color;                
+                transform: translate(-110%, 0%);
+                margin-top: 1em;                
+
+                transition: transform .2s linear;
+                transition-delay: .2s;
+                
+            }
+
+            &:hover{
+
+                //border-left: 3px solid $base-color;
+                background-color: rgba(0,0,0,.25);
+                transition-delay: .8s;
+
+                &::before{
+                    transition-delay: .8s;
+                    transform: translate(0%, 0%);
+                }
+
+                .urlBackgroundTop{
+                    transition-delay: .2s;
+                    transform: translate(0%, 0%);
+                }
+
+                &::after{
+                
+                    height: 100%;
+                }
+
+                .urlBackgroundBottom{
+                    transition-delay: .6s;
+                    transform: translate(0%, 0%);
+                }
+            }
+        }
+
         button{
             margin-bottom: 1em;
             padding: 1vw;
             background-color: $base-color;
+
+            transition: transform .5s linear;
+
+            &:hover{
+                transform: scale(1.2, 1.2);
+            }
         }
 
         &:hover{
                 opacity: 1; 
-                background-size: cover;
-                          
+                background-size: cover;                          
         }
     }
     
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1400px) {
     .Project {
-        width: 22vw;
-        height: 22vw;
+        width: 28vw;
+        height: 28vw;
 
         .ProjectDescription h2{
             font-size: 2vw;
         }
+
+        .Link
+        {
+            font-size: 14px;
+        }
+
     }
 }
+
+@media only screen and (max-width: 1200px) {
+    .Project {
+        width: 60vw;
+        height: 60vw;
+
+        .ProjectDescription h2{
+            font-size: 3vw;
+        }
+
+        .Link
+        {
+            font-size: 14px;
+        }
+
+    }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+        .Link
+        {
+            font-size: 9px;
+        }
+
+        .url{
+            display: none;
+        }
+
+
+        hr{
+            display: none;
+        }
+    }

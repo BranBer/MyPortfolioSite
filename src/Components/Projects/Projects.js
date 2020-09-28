@@ -42,7 +42,12 @@ const Projects = (props) =>
 
             if(project.tags.indexOf(currentLocation) !== -1 || currentLocation == 'projects')
             {
-                return (<Project key = {"project" + index} id = {"projects" + index} tags = {project.tags}/>);
+                return (<Project key = {"project" + index} 
+                                 id = {"projects" + index} tags = {project.tags}
+                                 title = {project.title}
+                                 url = {project.url}
+                                 githubLinks = {project.github}
+                                 images = {project.images}/>);
             }
     });
 
