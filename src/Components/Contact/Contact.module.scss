@@ -1,0 +1,206 @@
+@import '../../Designs/Base';
+
+.ContactContainer{
+    background-image: linear-gradient( to bottom, rgba(0,0,0,.7), rgba(0, 17, 255, .5), rgba(0,0,0,.7)), url('/Assets/milkyway.png');
+    background-blend-mode: multiply;
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2em;
+
+    @keyframes PlanetRotate {
+        from{
+            background-position: 0% 0%;
+        }
+
+        to{
+            background-position: 500% 0%;
+        }
+    }
+
+    .ContactContent{
+        width: 75%;
+        position: relative;
+        background-color: rgba(0,0,0, .4);
+        height: 100%;
+        z-index: 101;
+
+        color: $base-color;
+        font-family: 'Raleway';
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1{
+            font-weight: 100;
+            font-size: 9vw;
+
+            margin: .5em 0 .25em 0;
+        }
+
+        hr{
+            border:none;
+            width: 75%;
+
+            border-bottom: 1px solid $base-color;
+            margin: 1em auto 1em auto;
+        }
+
+        p{
+            width: 75%;
+            font-size: 20px;
+            align-self: center;
+            text-align: left;
+        }
+
+        ul{
+            width: 70%;
+            align-self: center;
+            list-style-type: none;
+            text-align: left;
+            padding: 1em;
+            border-left: 3px solid $base-color;
+            margin-left: 1em;
+
+            li{
+                
+            }
+        }
+
+        .PersonalMessage{
+            text-align: center;
+            margin:0;
+            font-size: 4vw;
+        }
+
+        @media only screen and (max-width: 1200px){
+            h1{
+                font-size: 12vw;
+            }
+        }
+
+
+    }
+
+    
+
+    .Mercury{
+        width:7vw;
+        height: 7vw;
+        border-radius: 100%;
+        overflow:hidden;
+        background-color: transparent;
+        z-index: 100;
+        position: absolute;
+
+        left: 5%;
+
+        .MercuryContent{
+            position: relative;
+            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/mercury.png');
+            background-size: contain;
+            background-repeat: repeat;
+            height: 100%;
+            width: 500%;
+
+            animation: PlanetRotate 5.011e+6s linear infinite;
+        }
+    }
+
+    .Venus{
+        width:18vw;
+        height: 18vw;
+        border-radius: 100%;
+        overflow:hidden;
+        background-color: transparent;
+        z-index: 100;
+        position: absolute;
+
+        left: 15%;
+
+        .VenusContent{
+            position: relative;
+            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/venus.png');
+            background-size: contain;
+            background-repeat: repeat;
+            height: 100%;
+            width: 500%;
+            background-blend-mode: multiply;
+
+            animation: PlanetRotate 1.002e+7s linear infinite;
+        }
+    }
+
+    .Earth{
+        width:18vw;
+        height: 18vw;
+        border-radius: 100%;
+        overflow:hidden;
+        background-color: transparent;
+        z-index: 100;
+        position: absolute;
+
+        left: 35%;
+
+        .EarthContent{
+            position: relative;
+            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/earth.png');
+            background-size: contain;
+            background-repeat: repeat;
+            height: 100%;
+            width: 500%;
+
+            animation: PlanetRotate 86.4s linear infinite;
+        }
+    }
+
+    .Mars{
+        width:16vw;
+        height: 16vw;
+        border-radius: 100%;
+        overflow:hidden;
+        background-color: transparent;
+        z-index: 100;
+        position: absolute;
+
+        left: 55%;
+
+        .MarsContent{
+            position: relative;
+            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/mars.png');
+            background-size: contain;
+            background-repeat: repeat;
+            height: 100%;
+            width: 500%;
+
+            animation: PlanetRotate 88.6s linear infinite;
+        }
+    }
+
+    .Jupiter{
+        width:35vw;
+        height: 35vw;
+        border-radius: 100%;
+        overflow:hidden;
+        background-color: transparent;
+        z-index: 100;
+        position: absolute;
+
+        left: 73%;
+
+        .JupiterContent{
+            position: relative;
+            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/jupiter.png');
+            background-size: contain;
+            background-repeat: repeat;
+            height: 100%;
+            width: 500%;
+
+            animation: PlanetRotate 32.4s linear infinite;
+        }
+    }      
+}

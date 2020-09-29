@@ -43,7 +43,7 @@ const GlobalProvider = (props) =>
         projectManagement: ['Git', 'Trello', 'Amazon Web Services'],
     };
 
-    const [value, updateValue] = useState({projects: projects, skills: skills});
+    const [value, updateValue] = useState({projects: projects, skills: skills, email: 'brandonberke@gmail.com'});
 
     return (
     <GlobalContext.Provider value = {value}>
