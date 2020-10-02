@@ -10,28 +10,32 @@ const GlobalProvider = (props) =>
             url: '',
             github: ['https://github.com/BranBer/MyPortfolioSite'],
             tags: ['frontend', 'React.js', 'python', 'HTML', 'Javascript', 'CSS',],
-            images: ['/Assets/PortfolioPic.PNG']
+            coverImage: 'PortfolioPic.PNG',
+            images: []
         },
         {   
             title: 'AirPnP',
             url: 'https://www.airpnp.org/',
             github: ['https://github.com/BranBer/AirPnP'],
             tags: ['backend', 'django', 'python'],
-            images: ['/Assets/AirPnP.png']
+            coverImage: 'AirPnP.png',
+            images: []
         },
         {   
             title: 'How Safe is your drinking water?',
             url: '',
             github: ['https://github.com/BranBer/Radon-222-Decay-In-a-sample-of-water'],
             tags: ['research', 'wolfram mathematica'],
-            images: ['/Assets/watersafetymathematica.png']
+            coverImage: 'watersafetymathematica.png',
+            images: []
         },
         {   
             title: 'Blog Site',
             url: '',
             github: ['https://github.com/BranBer/REACT-Blog-Site', 'https://github.com/BranBer/Django-Blog-Site-Backend'],
             tags: ['React.js', 'HTML', 'Javascript', 'CSS', 'Django', 'REST Framework'],
-            images: ['']
+            coverImage: '',
+            images: []
         },
     ];
 

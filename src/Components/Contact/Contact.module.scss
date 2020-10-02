@@ -1,7 +1,8 @@
 @import '../../Designs/Base';
 
 .ContactContainer{
-    background-image: linear-gradient( to bottom, rgba(0,0,0,.7), rgba(0, 17, 255, .5), rgba(0,0,0,.7)), url('/Assets/milkyway.png');
+    background-image: linear-gradient( to bottom, rgba(0,0,0,.7), rgba(0, 17, 255, .5), rgba(0,0,0,.7)), 
+    url('../../assets/milkyway.png');
     background-blend-mode: multiply;
     height: 100%;
     width:100%;
@@ -74,19 +75,25 @@
         .PersonalMessage{
             text-align: center;
             margin:0;
-            font-size: 4vw;
+            font-size: 2vw;
+
+            border: 3px solid $base-color;
+            padding: 1em;
+            margin-top: 1em;
         }
+
+
 
         @media only screen and (max-width: 1200px){
             h1{
                 font-size: 12vw;
             }
+
+            .PersonalMessage{
+                font-size: 3vw;
+            }
         }
-
-
-    }
-
-    
+    }    
 
     .Mercury{
         width:7vw;
@@ -101,7 +108,8 @@
 
         .MercuryContent{
             position: relative;
-            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/mercury.png');
+            background: linear-gradient(to left, rgba(0,0,0,1) 85%,rgba(0, 17, 255, .1)), 
+            url('../../assets/mercury.png');
             background-size: contain;
             background-repeat: repeat;
             height: 100%;
@@ -124,7 +132,8 @@
 
         .VenusContent{
             position: relative;
-            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/venus.png');
+            background: linear-gradient(to left, rgba(0,0,0,1) 85%,rgba(0, 17, 255, .1)), 
+            url('../../assets/venus.png');
             background-size: contain;
             background-repeat: repeat;
             height: 100%;
@@ -148,7 +157,8 @@
 
         .EarthContent{
             position: relative;
-            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/earth.png');
+            background: linear-gradient(to left, rgba(0,0,0,1) 85%,rgba(0, 17, 255, .1)), 
+            url('../../assets/earth.png');
             background-size: contain;
             background-repeat: repeat;
             height: 100%;
@@ -171,7 +181,8 @@
 
         .MarsContent{
             position: relative;
-            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/mars.png');
+            background: linear-gradient(to left, rgba(0,0,0,1) 85%,rgba(0, 17, 255, .1)), 
+            url('../../assets/mars.png');
             background-size: contain;
             background-repeat: repeat;
             height: 100%;
@@ -194,7 +205,8 @@
 
         .JupiterContent{
             position: relative;
-            background: linear-gradient(to left, rgba(0,0,0,1) 80%,rgba(0,0,0,0)), url('/Assets/jupiter.png');
+            background: linear-gradient(to left, rgba(0,0,0,1) 85%,rgba(0, 17, 255, .1)), 
+            url('../../assets/jupiter.png');
             background-size: contain;
             background-repeat: repeat;
             height: 100%;

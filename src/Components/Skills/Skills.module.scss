@@ -29,7 +29,8 @@
 
         top: -75%;
 
-        background: radial-gradient(circle at center, rgba(0, 17, 255, .3) 40%,rgba(0, 17, 255, .6), rgba(0, 17, 255, .8), rgba(0,0,0,.9) 65%), url('/Assets/spiralgalaxy.png');
+        background: radial-gradient(circle at center, rgba(0, 17, 255, .3) 40%,rgba(0, 17, 255, .6), rgba(0, 17, 255, .8), rgba(0,0,0,.9) 65%), 
+        url('../../assets/spiralgalaxy.png');
         background-blend-mode: multiply;
         background-size: cover;
         background-repeat: no-repeat;

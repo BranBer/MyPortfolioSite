@@ -14,7 +14,7 @@
     height: 100%;
     background-image:
     linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0, 17, 255, .7), rgba(0, 17, 255, .5)),
-    url('/Assets/Galaxy.png');
+    url('../../assets/Galaxy.png');
     background-size: cover;
     background-blend-mode: multiply;
     background-position: 50% 50%;
@@ -70,7 +70,8 @@
     .ImageContainer{
         width: 15em;
         height: 15em;
-        background-image: linear-gradient(0deg, rgba(0, 17, 255, .25), rgba(0, 17, 255, .25)), url('/Assets/brandon.jpg');
+        background-image: linear-gradient(0deg, rgba(0, 17, 255, .25), rgba(0, 17, 255, .25)), 
+        url('../../assets/brandon.jpg');
         background-blend-mode: difference;
         background-size: cover;
         background-position: 100% 50%;
@@ -86,25 +87,25 @@
         height: 3em;
 
         #linkedin{
-            background: url('/Assets/linkedin.png'), $base-color;
+            background: url('../../assets/linkedin.png'), $base-color;
             background-size: cover;
             background-blend-mode: darken;
         }
 
         #facebook{
-            background: url('/Assets/facebook.png'), $base-color;
+            background: url('../../assets/facebook.png'), $base-color;
             background-size: cover;
             background-blend-mode: darken;
         }
 
         #twitter{
-            background: url('/Assets/twitter.png'), $base-color;
+            background: url('../../assets/twitter.png'), $base-color;
             background-size: cover;
             background-blend-mode: darken;
         }
 
         #github{
-            background: url('/Assets/github.png'), $base-color;
+            background: url('../../assets/github.png'), $base-color;
             background-size: cover;
             background-blend-mode: darken;
         }
@@ -118,7 +119,7 @@
             transition-property: height, width;
 
             &:hover{
-                background: url('/Assets/twitter.png'), $base-color;
+                background: url('../../assets/twitter.png'), $base-color;
                 cursor: pointer;
                 height: 3em;
                 width: 3em;

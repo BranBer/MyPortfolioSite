@@ -2,17 +2,18 @@ import React, {useState, useEffect, useContext} from 'react';
 import styles from './Project.module.scss';
 import {Redirect} from 'react-router-dom';
 
+
+
 const Project = (props) =>
 {
     const [showRedirect, updateShowRedirect] = useState(false);
+    let image = props.coverImage;
 
     return (
-    <div className = {styles.Project} style = {props.images.length > 0?{backgroundImage: 'url(' + props.images[0] + ')', backgroundSize: 'length', backgroundRepeat: 'no-repeat', backgroundPosition: '50% 50%'}:null}>
+    <div className = {styles.Project} style = {image !==''?{backgroundImage: "url(" + require(`../../assets/${image}`) + ")", backgroundSize: 'length', backgroundRepeat: 'no-repeat', backgroundPosition: '50% 50%'}:null}>
         <div className = {styles.ProjectDescription} onClick = {() => updateShowRedirect(!showRedirect)}>
             <h2>{props.title}</h2>
             
-            {/* /<hr/> */}
-
             <div className = {styles.Tags}>
                 {props.tags!==undefined? 
                 props.tags.map((tag, index) => {

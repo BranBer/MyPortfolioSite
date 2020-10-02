@@ -47,7 +47,7 @@ const Projects = (props) =>
                                  title = {project.title}
                                  url = {project.url}
                                  githubLinks = {project.github}
-                                 images = {project.images}/>);
+                                 coverImage = {project.coverImage}/>);
             }
     });
 
