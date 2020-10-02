@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: center;
     column-gap: 2em;
+    position: absolute;
 
     @keyframes PlanetRotate {
         from{
@@ -52,24 +53,16 @@
         }
 
         p{
-            width: 75%;
-            font-size: 20px;
+            width: 65%;
+            font-size: 1.2vw;
             align-self: center;
             text-align: left;
         }
 
-        ul{
-            width: 70%;
-            align-self: center;
-            list-style-type: none;
-            text-align: left;
-            padding: 1em;
-            border-left: 3px solid $base-color;
-            margin-left: 1em;
-
-            li{
-                
-            }
+        .email{
+            font-size: 1.3vw;
+            color: white;
+            font-weight: bold;
         }
 
         .PersonalMessage{
@@ -77,12 +70,10 @@
             margin:0;
             font-size: 2vw;
 
-            border: 3px solid $base-color;
+            //border: 3px solid $base-color;
             padding: 1em;
             margin-top: 1em;
         }
-
-
 
         @media only screen and (max-width: 1200px){
             h1{
@@ -91,6 +82,14 @@
 
             .PersonalMessage{
                 font-size: 3vw;
+            }
+
+            p{
+                font-size: 2vw;
+            }
+    
+            .email{
+                font-size: 2.1vw;
             }
         }
     }    
@@ -115,7 +114,7 @@
             height: 100%;
             width: 500%;
 
-            animation: PlanetRotate 5.011e+6s linear infinite;
+            animation: PlanetRotate 1.002e+7s linear infinite;
         }
     }
 
@@ -140,7 +139,7 @@
             width: 500%;
             background-blend-mode: multiply;
 
-            animation: PlanetRotate 1.002e+7s linear infinite;
+            animation: PlanetRotate 41796s linear infinite;
         }
     }
 
@@ -164,7 +163,7 @@
             height: 100%;
             width: 500%;
 
-            animation: PlanetRotate 86.4s linear infinite;
+            animation: PlanetRotate 172.8s linear infinite;
         }
     }
 
@@ -188,7 +187,7 @@
             height: 100%;
             width: 500%;
 
-            animation: PlanetRotate 88.6s linear infinite;
+            animation: PlanetRotate 177.2s linear infinite;
         }
     }
 
@@ -212,7 +211,7 @@
             height: 100%;
             width: 500%;
 
-            animation: PlanetRotate 32.4s linear infinite;
+            animation: PlanetRotate 64.8s linear infinite;
         }
     }      
 }

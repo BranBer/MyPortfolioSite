@@ -47,7 +47,22 @@ const GlobalProvider = (props) =>
         projectManagement: ['Git', 'Trello', 'Amazon Web Services'],
     };
 
-    const [value, updateValue] = useState({projects: projects, skills: skills, email: 'brandonberke@gmail.com'});
+    
+    const setPageTransition = (transition) =>
+    {
+        let myValues = value;
+
+        myValues.pageTransition = transition;
+        updateValue(myValues);
+    }
+
+    const [value, updateValue] = useState({
+        projects: projects, 
+        skills: skills, 
+        email: 'brandonberke@gmail.com',
+        setPageTransition: setPageTransition,
+        pageTransition: null
+    });
 
     return (
     <GlobalContext.Provider value = {value}>

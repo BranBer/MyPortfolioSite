@@ -1,0 +1,11 @@
+@import "../../Designs/Base";
+
+.IntermissionContainer{
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background-size: cover;
+    z-index: 100;
+}

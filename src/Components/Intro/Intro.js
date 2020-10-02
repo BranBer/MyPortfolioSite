@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './Intro.module.scss';
 import {Link} from 'react-router-dom';
+import Intermission from '../Intermission/Intermission';
+import GlobalNav from '../GlobalNav/GlobalNav';
 
 const Intro = (props) =>
 {
@@ -10,7 +12,7 @@ const Intro = (props) =>
     let githuburl = "https://github.com/BranBer";
     return (
         <div className = {styles.IntroContainer}>
-
+            
             {/*Main Div*/}
             <div className = {styles.IntroContent}>
                 <h1>BRANDON.IO</h1>
@@ -43,7 +45,7 @@ const Intro = (props) =>
 
                 {/*Nav Bar*/}
                 <div className = {styles.NavBar}>
-                    <Link to = '/' style = {{textDecoration: 'none'}}>
+                    {/* <Link to = '/' style = {{textDecoration: 'none'}}>
                         <span className = {styles.NavOption}>HOME</span>
                     </Link>
 
@@ -57,7 +59,8 @@ const Intro = (props) =>
 
                     <Link to = '/contact' style = {{textDecoration: 'none'}}>
                         <span className = {styles.NavOption}>CONTACT</span>
-                    </Link>
+                    </Link> */}
+                    <GlobalNav/>
                 </div>
             </div>
         </div>

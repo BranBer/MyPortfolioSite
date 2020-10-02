@@ -37,8 +37,7 @@ const Projects = (props) =>
     }, []);
 
     let showProjects = myContext.projects.map(
-        (project, index) =>{
-            console.log(project);
+        (project, index) =>{           
 
             if(project.tags.indexOf(currentLocation) !== -1 || currentLocation == 'projects')
             {
