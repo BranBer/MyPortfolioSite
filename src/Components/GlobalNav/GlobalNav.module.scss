@@ -6,17 +6,93 @@
     align-items: flex-end;
     justify-content: center;
     column-gap: 2em;
-    height: 26px;
+    //height: 40px;
 
-    
-    .NavOption{
-        text-decoration: none;
-        color: $base-color;
-        font-size: 20px;
-        transition: font-size 1s ease-in-out;
+    .NavOptionContainer{
+        overflow: hidden;
+        display: block;
+        position: relative;
+        //padding: 1em;
+        height: 100%;
+
+        .NavOption{
+            text-decoration: none;
+            overflow: hidden;
+            position: relative;
+            display: block;
+            color: $base-color;
+            font-size: 20px;
+            transition: font-size 1s ease-in-out;        
+            padding: .5em;  
+            margin: .5em; 
+            z-index: 90;
+        }
 
         &:hover{
-            font-size: 26px;
+            .NavUpper{
+                transform: translateX(0%);   
+            }
+
+            &:after{
+                transform: translateY(0%);
+            }
+
+            .NavLower{
+                transform: translateX(0%);  
+            }
+
+            &:before{
+                transform: translateY(0%);
+            }
         }
+
+        .NavUpper{
+            border-top: 4px solid $base-color;
+            top: 0%;
+            width: 100%;
+            position: absolute;
+
+            transform: translateX(110%); 
+            transition: transform .5s linear;
+        }
+
+        &:after{
+            content: "";
+            position: absolute;
+            
+            height: 100%;
+            left: 0%;
+            top: 0%;
+
+            border-left: 4px solid $base-color;
+
+            transform: translateY(110%);
+            transition: transform .5s linear;  
+        }
+
+        .NavLower{
+            border-bottom: 4px solid $base-color;
+            bottom: 0%;
+            width: 20vw;
+            position: absolute;
+            transform: translateX(-110%);  
+            transition: transform .5s linear;  
+        }
+
+        &:before{
+            content: "";
+            position: absolute;
+
+            height: 100%;
+            right: 0%;
+            top: 0%;
+
+            border-right: 4px solid $base-color;
+
+            transform: translateY(-110%);
+            transition: transform .5s linear;
+        }
+
+
     }
 }

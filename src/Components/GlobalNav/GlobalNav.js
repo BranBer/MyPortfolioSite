@@ -10,21 +10,37 @@ const GlobalNav = () =>
 
     return (
         <div className = {styles.NavBar}>
-            <Link to = '/' style = {{textDecoration: 'none'}}>
-                <span className = {styles.NavOption} onClick = {()=>myContext.pageTransition()}>HOME</span>
-            </Link>
+            <div className = {styles.NavOptionContainer}>
+                <Link to = '/' style = {{textDecoration: 'none'}}>
+                    <div className = {styles.NavUpper} />
+                    <span className = {styles.NavOption} onClick = {()=>myContext.pageTransition()}>HOME</span>
+                    <div className = {styles.NavLower} />
+                </Link>
+            </div>
 
-            <Link to = '/projects' style = {{textDecoration: 'none'}}>
-                <span className = {styles.NavOption} onClick = {()=>myContext.pageTransition()}>PROJECTS</span>
-            </Link>
+            <div className = {styles.NavOptionContainer}> 
+                <Link to = '/projects' style = {{textDecoration: 'none'}}>
+                    <div className = {styles.NavUpper} />
+                    <span className = {styles.NavOption} onClick = {()=>myContext.pageTransition()}>PROJECTS</span>
+                    <div className = {styles.NavLower} />
+                </Link>
+            </div>
 
-            <Link to = '/skills' style = {{textDecoration: 'none'}}>
-                <span className = {styles.NavOption} onClick = {()=>myContext.pageTransition()}>SKILLS</span>
-            </Link>
+            <div className = {styles.NavOptionContainer}>                
+                <Link to = '/skills' style = {{textDecoration: 'none'}} >
+                    <div className = {styles.NavUpper} />
+                    <span className = {styles.NavOption} onClick = {()=>myContext.pageTransition()}>SKILLS</span>
+                    <div className = {styles.NavLower} />
+                </Link>
+            </div>
 
-            <Link to = '/contact' style = {{textDecoration: 'none'}}>
-                <span className = {styles.NavOption} onClick = {()=>myContext.pageTransition()}>CONTACT</span>
-            </Link>
+            <div className = {styles.NavOptionContainer}>
+                <Link to = '/contact' style = {{textDecoration: 'none'}}>
+                    <div className = {styles.NavUpper} />
+                    <span className = {styles.NavOption} onClick = {()=>myContext.pageTransition()}>CONTACT</span>
+                    <div className = {styles.NavLower} />
+                </Link>
+            </div>
         </div>
     );
 }
