@@ -1,0 +1,81 @@
+@import "../../Designs/Base";
+
+.GalleryImageContainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+
+   
+
+    .GalleryImageContent{
+        width: 40%;
+        padding-bottom: 40%;
+        overflow: hidden;
+        position: relative;
+
+        .CurrentImage{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }    
+}
+
+.Right
+{
+    opacity: 0;
+    transition: opacity .75s linear;
+
+    cursor: pointer;
+
+    position: absolute;
+    padding-bottom: 40%;
+    right: 30%;
+    
+    background: linear-gradient(to left, black, rgba(0,0,0,0));
+
+    width: 20%;
+    z-index: 100;
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.RightCornerBand{
+    z-index: 100;
+    position: absolute;
+    //align-self: center;
+    right: -13%;
+    top: 10%;
+    width: 60%;
+    color: black;
+    transform: rotate(45deg);
+    background-color: $base-color;
+    border: 3px solid white; 
+    pointer-events: none;
+    text-align: center;
+    
+}
+
+}
+.carousel-enter{
+    transform: translate(-100%, 0%);
+}
+
+.carousel-enter-active{
+    transition: transform 750ms linear;
+    transform: translate(0%, 0%);
+}
+
+.carousel-exit{
+    transform: translate(0%, 0%);
+}
+
+.carousel-exit-active{
+    transition: transform 750ms linear;
+    transform: translate(100%, 0%);
+}

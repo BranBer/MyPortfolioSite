@@ -5,13 +5,14 @@ const GlobalContext = React.createContext();
 const GlobalProvider = (props) =>
 {
     let projects = [
-        {   
+        {
             title: 'My Portfolio',
             url: '',
             github: ['https://github.com/BranBer/MyPortfolioSite'],
             tags: ['frontend', 'React.js', 'python', 'HTML', 'Javascript', 'CSS',],
             coverImage: 'PortfolioPic.PNG',
-            images: []
+            images: ['stars.png', 'spiralgalaxy.png', 'sunsurface.jpg'],
+            description: 'A portfolio that utlizes React\'s context API, React Transition Group, React Router, AJAX, and advanced CSS Techniques. This portfolio is a display of its creator\'s creative and technical abilities. '
         },
         {   
             title: 'AirPnP',
@@ -27,7 +28,8 @@ const GlobalProvider = (props) =>
             github: ['https://github.com/BranBer/Radon-222-Decay-In-a-sample-of-water'],
             tags: ['research', 'wolfram mathematica'],
             coverImage: 'watersafetymathematica.png',
-            images: []
+            images: [],
+            description: ''
         },
         {   
             title: 'Blog Site',
@@ -35,7 +37,8 @@ const GlobalProvider = (props) =>
             github: ['https://github.com/BranBer/REACT-Blog-Site', 'https://github.com/BranBer/Django-Blog-Site-Backend'],
             tags: ['React.js', 'HTML', 'Javascript', 'CSS', 'Django', 'REST Framework'],
             coverImage: '',
-            images: []
+            images: [],
+            description: ''
         },
     ];
 

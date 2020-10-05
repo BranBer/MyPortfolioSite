@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import styles from './Project.module.scss';
-import {Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 
@@ -50,9 +50,9 @@ const Project = (props) =>
                     :null
                 }
 
-                {/* <hr/>
+                
 
-                <Link to = {"/projects/" + ''}><button>Read More</button></Link> */}
+                <Link to = {"/project/" + props.title}><button>Read More</button></Link>
             </div>
         
     </div>);

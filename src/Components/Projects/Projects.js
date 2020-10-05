@@ -15,6 +15,7 @@ const Projects = (props) =>
 
     let myContext = useContext(GlobalContext);
 
+    const [currentTag, updateCurrentTag] = useState('');
     const [projects, updateProjects] = useState([...myContext.projects]);
     
     const filterProjects = (filter) =>
@@ -39,10 +40,11 @@ const Projects = (props) =>
     let showProjects = myContext.projects.map(
         (project, index) =>{           
 
-            if(project.tags.indexOf(currentLocation) !== -1 || currentLocation == 'projects')
+            if(project.tags.indexOf(currentTag) !== -1 || currentTag == '')
             {
                 return (<Project key = {"project" + index} 
-                                 id = {"projects" + index} tags = {project.tags}
+                                 id = {project.title}
+                                 tags = {project.tags}
                                  title = {project.title}
                                  url = {project.url}
                                  githubLinks = {project.github}
@@ -61,25 +63,30 @@ const Projects = (props) =>
                         <br/>
         
                         <div className = {styles.ProjectsFilter}>
-                        <Link to = {'/projects'} 
+                            <button
                                   style = {{textDecoration: 'none'}}
-                                  className = {styles.ProjectFilter}>All Projects</Link>
+                                  className = {styles.ProjectFilter}
+                                  onClick = {() => {updateCurrentTag('')}}>All Projects</button>
 
-                            <Link to = {'/projects' + '/frontend'} 
+                            <button
                                   style = {{textDecoration: 'none'}}
-                                  className = {styles.ProjectFilter}>Frontend</Link>
+                                  className = {styles.ProjectFilter}
+                                  onClick = {() => {updateCurrentTag('frontend')}}>Frontend</button>
         
-                            <Link to = {'/projects' + '/backend'} 
+                            <button
                                   style = {{textDecoration: 'none'}}
-                                  className = {styles.ProjectFilter}>Backend</Link>
+                                  className = {styles.ProjectFilter}
+                                  onClick = {() => {updateCurrentTag('backend')}}>Backend</button>
                                   
-                            <Link to = {'/projects' + '/research'} 
+                            <button
                                   style = {{textDecoration: 'none'}}
-                                  className = {styles.ProjectFilter}>Research</Link>
+                                  className = {styles.ProjectFilter}
+                                  onClick = {() => {updateCurrentTag('research')}}>Research</button>
         
-                            <Link to = {'/projects' + '/other'} 
+                            <button 
                                   style = {{textDecoration: 'none'}}
-                                  className = {styles.ProjectFilter}>Other</Link>                              
+                                  className = {styles.ProjectFilter}
+                                  onClick = {() => {updateCurrentTag('other')}}>Other</button>                              
                         </div>
                         
                         <div className = {styles.Projects}>

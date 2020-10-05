@@ -6,6 +6,7 @@ import Intro from '../Components/Intro/Intro';
 import Projects from '../Components/Projects/Projects';
 import Skills from '../Components/Skills/Skills';
 import Contact from '../Components/Contact/Contact';
+import ProjectPage from '../Components/ProjectPage/ProjectPage';
 
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import { GlobalContext } from '../Context/GlobalContext';
@@ -34,13 +35,13 @@ function App() {
       {/* <button onClick = {() => updateShowIntermission(!showIntermission)}>transition</button> */}
       <CSSTransition 
         in = {showIntermission}
-        timeout = {1000}
+        timeout = {750}
         classNames = "slider"
         
         >
 
-          <div className = "intermission">
-
+          <div className = "intermission">            
+            
           </div>
         
       </CSSTransition>
@@ -50,7 +51,7 @@ function App() {
         <TransitionGroup>
           <CSSTransition
             key = {location.key}
-            timeout = {1000}
+            timeout = {750}
             classNames = "pageslide"
           >
           <>  
@@ -61,6 +62,7 @@ function App() {
                   <Projects {...props} />
                 </>
               )}/>
+              <Route path = "/project/:title" component = {ProjectPage}/>
               <Route path = "/skills/" component = {Skills}/>
               <Route path = "/contact/" component = {Contact}/>
               <Route path = "/" component = {Intro}/>          
