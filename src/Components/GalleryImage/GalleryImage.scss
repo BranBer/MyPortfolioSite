@@ -8,6 +8,8 @@
     height: auto;
     width: 100%;
 
+    background: radial-gradient(circle at center, black, rgba(0,0,0,0));
+
    
 
     .GalleryImageContent{
@@ -49,6 +51,7 @@
     z-index: 100;
     position: absolute;
     //align-self: center;
+    opacity: .25;
     right: -13%;
     top: 10%;
     width: 60%;

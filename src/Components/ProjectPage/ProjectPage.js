@@ -9,76 +9,95 @@ const ProjectPage = (props) =>
 {
     const [project, updateProject] = useState({});    
     const [projectLanguages, updateProjectLanguages] = useState({});
+    const [sum, updateSum] = useState(0);
+
     let myContext = useContext(GlobalContext);
     let title = props.match.params.title;
 
     let githubAPI = 'https://api.github.com/repos/';
+
+    const getSum = (object) =>
+    {
+        let sum = 0;
+
+        for (let i in object){
+            sum += object[i];
+        }
+
+        return sum;
+    }
 
     useEffect(() => {
         let myProject = myContext.projects.filter((project) => {return project.title == title});
         
         updateProject(myProject[0]);
         
-        let github = myProject[0].github;
+        let githubLinks = myProject[0].github;
 
-        for (var i in github) {
-            let gitLink = github[i].split('/').slice(
-                    [github[i].split('/').indexOf('github') - 1], 
-                    github[i].split('/').length).join('/');
+        let gitPromises = [];
+
+        for (let i in githubLinks){
+
+            let gitLink = githubLinks[i].split('/').slice(
+            [githubLinks[i].split('/').indexOf('github') - 1], 
+            githubLinks[i].split('/').length).join('/');
 
             gitLink = githubAPI + gitLink + '/languages';
+            gitPromises.push(axios.get(gitLink));
+        }
+
+
+        axios.all(gitPromises)
+            .then(
+                axios.spread((...responses) => {     
+                    let newLanguages = {};               
+                    const myResponses = responses;
+
+
+                    for(var i in myResponses)
+                    {
+                        newLanguages = {...myResponses[i].data, ...newLanguages}
+                    }
+
+                    updateProjectLanguages(newLanguages);
+                })
+            )
+
+        // for (let i in github) {
+        //     let gitLink = github[i].split('/').slice(
+        //             [github[i].split('/').indexOf('github') - 1], 
+        //             github[i].split('/').length).join('/');
+
+        //     gitLink = githubAPI + gitLink + '/languages';
+        //     //console.log(gitLink);
           
 
-            axios.get(gitLink)
-            .then(res => {
-                let sum = 0;
+        //     axios.get(gitLink)
+        //     .then(res => {
+        //         updateProjectLanguages({...res.data, ...projectLanguages});
+        //     });
 
-
-                for(var i in res.data){
-                    sum+= res.data[i];
-                }
-
-                console.log(sum);
-                
-                let languages = res.data;
-
-                for(var i in languages){
-                    languages[i] = languages[i]/sum * 100;
-                }
-
-                updateProjectLanguages({...languages, ...res.data});
-            });
-        };
+            
+        // };
     }, []);
 
+    let LanguagePercentage = null;
 
-    let LanguagePercentage = Object.entries(projectLanguages).map((language, index) => {
-        console.log(language);
-        return (
-            <div 
-                className = {styles.LanguageContent} 
-                key = {props.title + 'language' + index}
-                style = {{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'space-between'
-                }}
-            >
-                <label>{language[0]}</label> 
-                <div className = {styles.LanguagePercentage} style = {{width: '100%'}}>
-                    <div className = {styles.LanguagePercentage1}  style = {{width: `${language[1]}%`, height: '100%', backgroundColor: 'lightblue', color: 'black'}}>
-                        
-                    </div> 
-                    <div className = {styles.LanguagePercentage2} style = {{width: `${100 - language[1]}%`, height: '100%', backgroundColor: 'salmon'}}>
-
-                    </div> 
-
-                    <div className = {styles.PercentageNumber}>
-                        {language[1].toFixed(2) + "%"}
-                    </div>
-                </div>
-            </div>)
-    });
+    // let LanguagePercentage = 
+    // projectLanguages.length > 0?
+    //     projectLanguages.map((languageSet, index) => (
+    //         <div key = {'languageSet' + index}>
+    //             {
+    //                 Object.entries(languageSet).map((language, lIndex) => (
+    //                     <div key = {'language' + lIndex + 'set' + index}>
+    //                         <label>{language[0]}</label>
+    //                     </div>
+    //                 ))
+    //             }
+    //         </div>
+    //     ))
+    // :
+    //     console.log('here');
 
     return (
         <div className = {styles.ProjectPageContainer}>
@@ -91,19 +110,51 @@ const ProjectPage = (props) =>
                     <GlobalNav/>
 
                     <hr/>
+                    <br/>
 
                     <GalleryImage images = {
                         [project.coverImage].concat(project.images)
                     }/>
 
                     <p>{project.description}</p>
-
+                    <br/>
                     <div className = {styles.LanguageContainer}>
                         {
-                            LanguagePercentage
+                            Object.entries(projectLanguages).map((language, index) => {
+                                let percentage = (language[1]/getSum(projectLanguages) * 100).toFixed(2);
+
+                                return (
+                                <div 
+                                    key = {'language' + index}
+                                    style = {{
+                                        display: 'flex',
+                                        flexDirection: 'row',
+                                        justifyContent: 'center',
+                                        width: '100%'
+                                    }}>
+                                    <label style = {{width: '120px', textAlign: 'left'}}>{language[0]}</label>    
+
+                                    <div style = {{
+                                        width: '75%',
+                                        height: '100%',
+                                        border:'1px solid lightblue',
+                                    }}> 
+                                        <div
+                                             style = {{
+                                                width: `${percentage}%`,
+                                                height: '100%',
+                                                backgroundColor: 'lightblue'
+                                            }}>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <span style = {{width: '20%', textAlign: 'right'}}>{percentage + '%'}</span>
+                                </div>
+                            )})
                         }
                     </div>
-
+                    <br/>
                 </>:
                 null}
 

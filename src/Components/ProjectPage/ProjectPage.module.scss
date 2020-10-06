@@ -1,7 +1,17 @@
 @import '../../Designs/Base';
+@keyframes spaceTravel
+{
+    from {background-size: 50%}
+    to {background-size: 200%;}
+}
 
 .ProjectPageContainer{
-    background-color: white;
+    background-image:
+    linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0, 17, 255, .7), rgba(0, 17, 255, .5)),
+    url('../../assets/stars.png');
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: 50% 50%;    
 
     display: flex;
     flex-direction: row;
@@ -17,7 +27,8 @@
 
     .ProjectPageContent{
         width:75%;
-        background-color: black;
+        background-color: rgba(0,0,0,.7);
+        padding: 1em;
         overflow-y: scroll;
         display: flex;
         flex-direction: column;
@@ -35,40 +46,21 @@
         }
 
         p{
-            width: 75%;
+            width: 60%;
+            text-align: left;
+            padding-left: 1em;
+            border-left: 3px solid $base-color;
         }
 
         .LanguageContainer
         {
             display: flex;
             flex-direction: column;
-            width: 75%;
+            width: 60%;
             row-gap: 1em;
 
-            .LanguageContent{
-                //background-color: red;
-                
-                width: 100%;
-
-                
-                label{
-                    width: 120px;
-                }
-
-                .LanguagePercentage{
-                    display: flex;
-                    flex-direction: row;
-
-                    .LanguagePercentage1{
-                    }
-                }
-
-                .PercentageNumber{
-                    width: 20px;
-                    margin-left: 10px;
-                }
-            }
-    }
+            
+        }
         
     }
 }

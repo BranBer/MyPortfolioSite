@@ -12,7 +12,7 @@ const GlobalProvider = (props) =>
             tags: ['frontend', 'React.js', 'python', 'HTML', 'Javascript', 'CSS',],
             coverImage: 'PortfolioPic.PNG',
             images: ['stars.png', 'spiralgalaxy.png', 'sunsurface.jpg'],
-            description: 'A portfolio that utlizes React\'s context API, React Transition Group, React Router, AJAX, and advanced CSS Techniques. This portfolio is a display of its creator\'s creative and technical abilities. '
+            description: 'A portfolio that utlizes React\'s context API, React Transition Group, React Router, AJAX, and advanced CSS Techniques. This portfolio is a display of its creator\'s creative and technical abilities. These abilities could be yours if you go to the portfolio\'s contact page and contact him.'
         },
         {   
             title: 'AirPnP',
