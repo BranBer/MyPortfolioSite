@@ -18,7 +18,58 @@ const Skills = (props) =>
                 <GlobalNav />
 
                 <hr/>
+                <h3 className = {styles.Heading}>EDUCATION</h3>
+                    <div className = {styles.Education}>
+                        
+                        
+                        {
+                            myContext.colleges.map((college, index) => {
+                                
+                                return(
+                                    <div className = {styles.College} key = {'college' + index + college.name}>
+                                        <img src = {require(`../../assets/${college.image}`)}/>
 
+                                        <div className = {styles.CollegeDetails}> 
+
+                                            <label className = {styles.CollegeName}>{college.name.toUpperCase()}</label>
+                                            <div className = {styles.CollegeDetailsRow}>
+                                                
+                                                <label>DEGREE: </label>
+                                                <span>{college.degree}</span>
+                                            </div>
+
+                                            <div className = {styles.CollegeDetailsRow}>
+                                                
+                                                <label>CONCENTRATION: </label>
+                                                <span>{college.concentration}</span>
+                                            </div>
+
+                                            <div className = {styles.CollegeDetailsRow}>
+                                                
+                                                <label>DEGREE TYPE: </label>
+                                                <span>{college.degreeType}</span>
+                                            </div>
+
+                                            <div className = {styles.CollegeDetailsRow}>
+                                                
+                                                <label>GPA: </label>
+                                                <span>{college.gpa}</span>
+                                            </div>
+
+                                            <div className = {styles.CollegeDetailsRow}>
+                                                
+                                                <label>GRADUATED: </label>
+                                                <span>{college.graduated}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
+
+                    
+                    <h3 className = {styles.Heading}>SKILLSET</h3>
                 
                     <div className = {styles.Table}>
                         <div className = {styles.Column}>

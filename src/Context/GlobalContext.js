@@ -23,7 +23,7 @@ const GlobalProvider = (props) =>
             images: []
         },
         {   
-            title: 'How Safe is your drinking water?',
+            title: 'How Safe is your drinking water',
             url: '',
             github: ['https://github.com/BranBer/Radon-222-Decay-In-a-sample-of-water'],
             tags: ['research', 'wolfram mathematica'],
@@ -49,6 +49,18 @@ const GlobalProvider = (props) =>
         os: ['Windows 10', 'UNIX/LINUX', 'Debian', 'Ubuntu'],
         projectManagement: ['Git', 'Trello', 'Amazon Web Services'],
     };
+    
+    let colleges = [
+        {
+            image: 'fsclogo.jpg',
+            name: 'Farmingdale State College',
+            degree: 'Computer Science and Information Systems',
+            concentration: 'Computer Programming',
+            degreeType: 'Bachelor of Science',
+            gpa: 3.53,
+            graduated: 'May 2020'
+        }
+    ]
 
     
     const setPageTransition = (transition) =>
@@ -62,9 +74,10 @@ const GlobalProvider = (props) =>
     const [value, updateValue] = useState({
         projects: projects, 
         skills: skills, 
+        colleges: colleges,
         email: 'brandonberke@gmail.com',
         setPageTransition: setPageTransition,
-        pageTransition: null
+        pageTransition: null,
     });
 
     return (

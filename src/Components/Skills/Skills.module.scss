@@ -37,7 +37,7 @@
         background-repeat: no-repeat;
         background-position: center;
 
-        animation: GalaxyRotate 120s infinite reverse linear;
+        animation: GalaxyRotate 240s infinite reverse linear;
     }
 
     .SkillsContent{
@@ -47,7 +47,13 @@
         width: 75%;
         font-family: 'Raleway';
         color: $base-color;
-        background-color: rgba(0, 0, 0, .6);
+        background-color: rgba(0, 0, 0, .75);
+        min-width: 600px;
+        overflow-y: scroll;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         h2{
             font-size:  14vw;
@@ -56,47 +62,158 @@
             
         }
 
+        .Heading{
+            width: 50%;
+            text-align: center;
+            font-size: 200%;
+            color: $base-color;
+
+            background: linear-gradient(to top, rgba(0,0,0,0) 50%, $base-color 50%, rgba(0,0,0,0) 55%);
+        }
+
         hr{
             border: none;
             border-bottom: 1px solid $base-color;
 
-            width: 75%;
+            width: 90%;
             margin: 1em auto 1em auto;
+        }
+
+        
+        .Education{
+
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 500px;
+            //border: 1px solid $base-color;
+            padding: 1em;
+            margin: 1em;
+            
+            img{
+                width: 30%;
+                border: 3px solid $base-color;
+                background-color: $base-color;
+                align-self: flex-start;
+            }
+
+            .College{
+                display: flex;
+                margin-left: 1em;
+                flex-direction: row;
+                column-gap: 1em;
+                width: 100%;
+                
+                padding: 1em;                
+
+                background: linear-gradient(to right, $base-color, rgba(0,0,0,0) 60%);
+                //border: 1px solid $base-color;
+                border-radius: 25px 60px;
+
+                .CollegeDetails{
+                    text-align: left;
+                    width: 70%;
+
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: .5em;
+                    padding: .5em;
+
+                    .CollegeName{
+                        font-size: 24px;
+                        width: 100%;
+                        color:black;
+                        padding: .5em 0 .5em 0;
+                        background-color: $base-color;
+                    }
+
+                    hr{
+                        width: 100%;
+                    }
+
+                    .CollegeDetailsRow{
+                        width: 100%;
+                        display: flex;
+                        flex-flow: row wrap;
+                        justify-content: space-between;
+
+                        label{
+                            width: 50%;
+                            font-weight: 1000;                      
+                        }
+
+                        .CollegeRowData{
+                            width: 70%;
+                        }
+
+                        span{
+                            text-align: left;
+                            font-weight: 400;
+                            width: 50%;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .Table{
+            display: flex;
+            flex-direction: row;
+            column-gap: .5em;
+            justify-content: center;
+            flex-wrap: wrap;
+            // margin-left: 3.125%;
+            // margin-right: 3.125%;
+            width: 100%;
+            
+            align-items: flex-start;        
+    
+            .Column{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1em;
+                margin: 1em;
+                //border-bottom: 1px solid $base-color;
+                transition: transform 1.61803398875s ease-in-out;
+                border-radius: 50px;
+
+                //background-color: $base-color;
+                color: $base-color;
+
+                background: linear-gradient(to bottom, $base-color, rgba(0,0,0,0) 50%);
+
+                h3{
+                    background-color: transparent;
+                    color: black;
+                    width: 100%;
+                    padding: .25em 0 .25em 0;
+                    margin: 0;
+                }
+    
+                .Skill{
+                    display: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    font-weight: 500;
+                    margin: .25em;
+                }
+
+                &:hover{
+                    transform: scale(1.1);
+                }
+                
+    
+            }
         }
     }
 
 
 
-        width: 100%;
-        .Table{
-            display: flex;
-            flex-direction: row;
-            column-gap: 2em;
-            justify-content: center;
-            flex-wrap: wrap;
-            align-self: center;
-            
-            align-items: flex-start;        
-
-            .Column{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                border: 3px solid $base-color;
-                padding: 1em;
-                margin: 1em;
-
-                h3{
-                }
-
-                .Skill{
-                    display: row;
-                    align-items: center;
-                    justify-content: flex-start;
-                }
-
-            }
-        }
+    
     
 }
 

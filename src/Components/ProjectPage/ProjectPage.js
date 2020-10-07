@@ -13,6 +13,9 @@ const ProjectPage = (props) =>
 
     let myContext = useContext(GlobalContext);
     let title = props.match.params.title;
+    let myProject = myContext.projects.filter((project) => {return project.title == title});
+    
+    console.log(project.title);
 
     let githubAPI = 'https://api.github.com/repos/';
 
@@ -28,10 +31,8 @@ const ProjectPage = (props) =>
     }
 
     useEffect(() => {
-        let myProject = myContext.projects.filter((project) => {return project.title == title});
         
         updateProject(myProject[0]);
-        
         let githubLinks = myProject[0].github;
 
         let gitPromises = [];
@@ -62,42 +63,57 @@ const ProjectPage = (props) =>
                     updateProjectLanguages(newLanguages);
                 })
             )
-
-        // for (let i in github) {
-        //     let gitLink = github[i].split('/').slice(
-        //             [github[i].split('/').indexOf('github') - 1], 
-        //             github[i].split('/').length).join('/');
-
-        //     gitLink = githubAPI + gitLink + '/languages';
-        //     //console.log(gitLink);
-          
-
-        //     axios.get(gitLink)
-        //     .then(res => {
-        //         updateProjectLanguages({...res.data, ...projectLanguages});
-        //     });
-
-            
-        // };
     }, []);
 
-    let LanguagePercentage = null;
 
-    // let LanguagePercentage = 
-    // projectLanguages.length > 0?
-    //     projectLanguages.map((languageSet, index) => (
-    //         <div key = {'languageSet' + index}>
-    //             {
-    //                 Object.entries(languageSet).map((language, lIndex) => (
-    //                     <div key = {'language' + lIndex + 'set' + index}>
-    //                         <label>{language[0]}</label>
-    //                     </div>
-    //                 ))
-    //             }
-    //         </div>
-    //     ))
-    // :
-    //     console.log('here');
+    let percentages = Object.entries(projectLanguages).map((language, index) => {
+        let percentage = (language[1]/getSum(projectLanguages) * 100).toFixed(2);
+
+        return (
+        <div 
+            key = {'language' + index}
+            style = {{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                width: '100%'
+            }}>
+            <label style = {{width: '100px', textAlign: 'left', marginRight: '30px'}}>{language[0]}</label>    
+
+            <div style = {{
+                width: '50%',
+                height: '100%',
+                border:'1px solid lightblue',
+            }}> 
+                <div
+                     style = {{
+                        width: `${percentage}%`,
+                        height: '100%',
+                        backgroundColor: 'lightblue'
+                    }}>
+                </div>
+            </div>
+
+            
+            <span style = {{width: '70px', paddingLeft: '30px',textAlign: 'right'}}>{percentage + '%'}</span>
+        </div>
+    )});
+
+    let links = myProject && myProject.length > 0 && myProject[0].github.length> 0?
+        [myProject[0].url].concat(myProject[0].github).map((url, index) =>
+        {
+            console.log(url);
+
+            return (
+                <div className = {styles.url} key = {props.id + 'githubLink' + index}>
+                    <div className = {styles.urlBackgroundTop}/>
+                    <p><a className = {styles.Link} href = {url} target = {'_blank'}>{url}</a></p>
+                    <div className = {styles.urlBackgroundBottom}/>
+                </div>
+            );
+        })
+    : null
+    
 
     return (
         <div className = {styles.ProjectPageContainer}>
@@ -116,44 +132,28 @@ const ProjectPage = (props) =>
                         [project.coverImage].concat(project.images)
                     }/>
 
+                    <hr/>
+
                     <p>{project.description}</p>
+
                     <br/>
+
                     <div className = {styles.LanguageContainer}>
                         {
-                            Object.entries(projectLanguages).map((language, index) => {
-                                let percentage = (language[1]/getSum(projectLanguages) * 100).toFixed(2);
-
-                                return (
-                                <div 
-                                    key = {'language' + index}
-                                    style = {{
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                        justifyContent: 'center',
-                                        width: '100%'
-                                    }}>
-                                    <label style = {{width: '120px', textAlign: 'left'}}>{language[0]}</label>    
-
-                                    <div style = {{
-                                        width: '75%',
-                                        height: '100%',
-                                        border:'1px solid lightblue',
-                                    }}> 
-                                        <div
-                                             style = {{
-                                                width: `${percentage}%`,
-                                                height: '100%',
-                                                backgroundColor: 'lightblue'
-                                            }}>
-                                        </div>
-                                    </div>
-
-                                    
-                                    <span style = {{width: '20%', textAlign: 'right'}}>{percentage + '%'}</span>
-                                </div>
-                            )})
+                            percentages
                         }
                     </div>
+
+                    <br/>
+                    <hr/>
+
+                    <div className = {styles.Links}>
+                        <label>LINKS</label>
+                        {
+                            links
+                        }
+                    </div>
+
                     <br/>
                 </>:
                 null}

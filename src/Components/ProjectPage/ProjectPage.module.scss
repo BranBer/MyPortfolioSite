@@ -13,10 +13,16 @@
     background-blend-mode: multiply;
     background-position: 50% 50%;    
 
+    animation: spaceTravel 80s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
 
+    
     
     height: 100%;
     width: 100%;
@@ -27,7 +33,8 @@
 
     .ProjectPageContent{
         width:75%;
-        background-color: rgba(0,0,0,.7);
+        min-width: 600px;
+        background-color: rgba(0,0,0,.75);
         padding: 1em;
         overflow-y: scroll;
         display: flex;
@@ -56,10 +63,127 @@
         {
             display: flex;
             flex-direction: column;
-            width: 60%;
-            row-gap: 1em;
+            width: 100%;
+            row-gap: 1em;            
+        }
 
-            
+        .Links{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            padding: 1em;
+
+            label{
+                font-size: 28px;
+                width: 100%;
+                margin-left: .45em;
+                text-align: left;
+
+            }
+
+            p{
+                border: none;
+                
+            }
+
+            .url{
+                cursor: pointer;
+                position: relative;
+                align-self: center;
+    
+                width: 100%;
+                overflow: hidden;
+                height: auto;
+                background-color: rgba(0,0,0,0);
+    
+                transition: background-color .8s linear;     
+                       
+    
+                .Link{
+                    text-decoration: none;
+                    color: $base-color;
+                    text-align: center;
+                    color: $base-color;
+                }
+    
+    
+                &::before{
+                    content: '';
+                    border-right: 4px solid $base-color;
+                    display: block;
+                    position: absolute;
+                    transform: translate(0%, 100%);
+                    transition: transform .2s linear;
+                    transition-delay: 0s;
+                    right: 0;
+                    height: 100%;
+                    top: 2px;
+    
+                }
+    
+                .urlBackgroundTop
+                {
+                    height: 0;
+                    border-bottom: 4px solid $base-color;
+                    transform: translate(110%, 0%);
+                    margin-bottom: 1em;
+                    transition: transform .2s linear;
+                    transition-delay: .6s;
+    
+                }
+    
+                &::after {
+                    content: '';
+                    border-left: 8px solid $base-color;
+                    display: block;
+                    position: absolute;
+                    height: 0%;
+                    transition: height .2s linear;
+                    transition-delay: .4s;
+                    left: 0;
+                    top: 2px;
+                }    
+    
+                .urlBackgroundBottom{
+    
+                    height: 0;
+                    border-bottom: 4px solid $base-color;                
+                    transform: translate(-110%, 0%);
+                    margin-top: 1em;                
+    
+                    transition: transform .2s linear;
+                    transition-delay: .2s;
+                    
+                }
+    
+                &:hover{
+    
+                    //border-left: 3px solid $base-color;
+                    background-color: rgba(0,0,0,.25);
+                    transition-delay: .8s;
+    
+                    &::before{
+                        transition-delay: .8s;
+                        transform: translate(0%, 0%);
+                    }
+    
+                    .urlBackgroundTop{
+                        transition-delay: .2s;
+                        transform: translate(0%, 0%);
+                    }
+    
+                    &::after{
+                    
+                        height: 100%;
+                    }
+    
+                    .urlBackgroundBottom{
+                        transition-delay: .6s;
+                        transform: translate(0%, 0%);
+                    }
+                }
+            }
+           
         }
         
     }

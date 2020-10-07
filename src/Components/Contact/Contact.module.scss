@@ -54,13 +54,13 @@
 
         p{
             width: 65%;
-            font-size: 1.2vw;
+            font-size: 24px;
             align-self: center;
             text-align: left;
         }
 
         .email{
-            font-size: 1.3vw;
+            font-size: 26px;
             color: white;
             font-weight: bold;
         }
@@ -68,7 +68,7 @@
         .PersonalMessage{
             text-align: center;
             margin:0;
-            font-size: 2vw;
+            font-size: 32px;
 
             //border: 3px solid $base-color;
             padding: 1em;
@@ -81,15 +81,15 @@
             }
 
             .PersonalMessage{
-                font-size: 3vw;
+                font-size: 28px;
             }
 
             p{
-                font-size: 2vw;
+                font-size: 20px;
             }
     
             .email{
-                font-size: 2.1vw;
+                font-size: 24px;
             }
         }
     }    
