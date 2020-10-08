@@ -59,6 +59,17 @@
             border-left: 3px solid $base-color;
         }
 
+        button{
+            padding: 1em;
+            background-color: $base-color;
+
+            transition: transform .25s linear;
+
+            &:hover{
+                transform: scale(1.15);
+            }
+        }
+
         .LanguageContainer
         {
             display: flex;

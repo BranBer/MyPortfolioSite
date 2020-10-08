@@ -108,7 +108,7 @@
                 
                 padding: 1em;                
 
-                background: linear-gradient(to right, $base-color, rgba(0,0,0,0) 60%);
+                background: linear-gradient(to right, rgba(173, 216, 230, .6), rgba(0,0,0,0) 60%);
                 //border: 1px solid $base-color;
                 border-radius: 25px 60px;
 
@@ -184,11 +184,12 @@
                 //background-color: $base-color;
                 color: $base-color;
 
-                background: linear-gradient(to bottom, $base-color, rgba(0,0,0,0) 50%);
+                background: linear-gradient(to bottom, rgba(173, 216, 230, .6), rgba(0,0,0,0) 50%);
 
                 h3{
                     background-color: transparent;
                     color: black;
+                    font-size: 24px;
                     width: 100%;
                     padding: .25em 0 .25em 0;
                     margin: 0;
@@ -198,15 +199,14 @@
                     display: row;
                     align-items: center;
                     justify-content: flex-start;
-                    font-weight: 500;
                     margin: .25em;
+                    font-size: 16px;
+                    font-weight: bold;
                 }
 
                 &:hover{
                     transform: scale(1.1);
-                }
-                
-    
+                }            
             }
         }
     }

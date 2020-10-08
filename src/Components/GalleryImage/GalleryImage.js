@@ -4,7 +4,6 @@ import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 const GalleryImage = (props) =>
 {
-    //const [currentImage, updateCurrentImage] = useState(props.images);
     const [position, updatePosition] = useState(0);
 
     const cycleRight = () =>
@@ -28,9 +27,10 @@ const GalleryImage = (props) =>
                     classNames = "carousel"
                     timeout = {{enter: 750, exit: 750}}>
                     <div>
+                        {props.images.length>1?
                         <div className = {'RightCornerBand'}>
                             Click Here
-                        </div>
+                        </div>:null}
                         
                         <img 
                             className = {'CurrentImage'}
@@ -43,9 +43,10 @@ const GalleryImage = (props) =>
 
     return (
         <div className = 'GalleryImageContainer'>
+                {images.length > 1?
                 <div className = {'Right'} onClick = {cycleRight}>
                 
-                </div>
+                </div>:null}
 
 
 

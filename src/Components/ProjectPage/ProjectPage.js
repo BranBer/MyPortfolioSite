@@ -3,6 +3,7 @@ import styles from './ProjectPage.module.scss';
 import GalleryImage from '../GalleryImage/GalleryImage';
 import GlobalNav from '../GlobalNav/GlobalNav';
 import {GlobalContext} from '../../Context/GlobalContext';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 const ProjectPage = (props) =>
@@ -12,6 +13,8 @@ const ProjectPage = (props) =>
     const [sum, updateSum] = useState(0);
 
     let myContext = useContext(GlobalContext);
+    let myHistory = useHistory();
+
     let title = props.match.params.title;
     let myProject = myContext.projects.filter((project) => {return project.title == title});
     
@@ -153,6 +156,14 @@ const ProjectPage = (props) =>
                             links
                         }
                     </div>
+
+                    <br/>
+
+                    <hr/>
+
+                    <br/>
+
+                    <button onClick = {() => myHistory.goBack()}>⬅ Go Back</button>
 
                     <br/>
                 </>:

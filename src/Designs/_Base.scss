@@ -23,8 +23,13 @@ button
 }
 
 ::-webkit-scrollbar{
-    width: 0;
+    width: 10px;
 
+}
+
+::-webkit-scrollbar-track{
+    background-color: transparent;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-corner{
@@ -33,5 +38,6 @@ button
 
 ::-webkit-scrollbar-thumb
 {
-    
+    background-color: rgba(173, 216, 230, .2);   
+    border-radius: 200px;
 }
