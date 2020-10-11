@@ -59,7 +59,9 @@ const Intro = (props) =>
                         <span className = {styles.NavOption}>CONTACT</span>
                     </Link> */}
                     <GlobalNav/>
+                    
                 </div>
+                <br/>
             </div>
         </div>
     );
