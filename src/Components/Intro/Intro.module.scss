@@ -74,7 +74,8 @@
 
     .ImageContainer{
         width: 15em;
-        height: 15em;
+        height: 0;
+        padding-bottom: 15em;
         background-image: linear-gradient(0deg, rgba(0, 17, 255, .25), rgba(0, 17, 255, .25)), 
         url('../../assets/brandon.jpg');
         background-blend-mode: difference;
