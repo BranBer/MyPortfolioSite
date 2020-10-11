@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState} from 'react';
 import styles from './Project.module.scss';
 import {Link} from 'react-router-dom';
 
@@ -28,7 +28,7 @@ const Project = (props) =>
                     props.url !== ''? 
                     <div className = {styles.url}>                        
                         <div className = {styles.urlBackgroundTop}/>
-                        <label><a className = {styles.Link} href = {props.url} target = {'_blank'}>{props.url}</a></label>
+                        <label><a className = {styles.Link} href = {props.url} target = {'_blank'} rel="noopener noreferrer">{props.url}</a></label>
                         <div className = {styles.urlBackgroundBottom}/>
                     </div>:null
                 }
@@ -41,7 +41,7 @@ const Project = (props) =>
                                 return (
                                     <div className = {styles.url} key = {props.id + 'githubLink' + index}>
                                         <div className = {styles.urlBackgroundTop}/>
-                                        <label><a className = {styles.Link} href = {props.url} target = {'_blank'}>{url}</a></label>
+                                        <label><a className = {styles.Link} href = {props.url} target = {'_blank'} rel="noopener noreferrer">{url}</a></label>
                                         <div className = {styles.urlBackgroundBottom}/>
                                     </div>
                                 );

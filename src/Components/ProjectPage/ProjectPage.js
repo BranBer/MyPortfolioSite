@@ -10,13 +10,12 @@ const ProjectPage = (props) =>
 {
     const [project, updateProject] = useState({});    
     const [projectLanguages, updateProjectLanguages] = useState({});
-    const [sum, updateSum] = useState(0);
 
     let myContext = useContext(GlobalContext);
     let myHistory = useHistory();
 
     let title = props.match.params.title;
-    let myProject = myContext.projects.filter((project) => {return project.title == title});
+    let myProject = myContext.projects.filter((project) => {return project.title === title});
     
     console.log(project.title);
 
@@ -66,7 +65,7 @@ const ProjectPage = (props) =>
                     updateProjectLanguages(newLanguages);
                 })
             )
-    }, []);
+    }, [githubAPI, myProject]);
 
 
     let percentages = Object.entries(projectLanguages).map((language, index) => {
@@ -110,7 +109,7 @@ const ProjectPage = (props) =>
             return (
                 <div className = {styles.url} key = {props.id + 'githubLink' + index}>
                     <div className = {styles.urlBackgroundTop}/>
-                    <p><a className = {styles.Link} href = {url} target = {'_blank'}>{url}</a></p>
+                    <p><a className = {styles.Link} href = {url} target = {'_blank'} rel="noopener noreferrer">{url}</a></p>
                     <div className = {styles.urlBackgroundBottom}/>
                 </div>
             );

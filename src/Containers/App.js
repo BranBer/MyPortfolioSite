@@ -1,6 +1,6 @@
-import React, {useState, useContext, useEffect, useRef} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import './App.scss';
-import {Switch, Route, BrowserRouter, useHistory, withRouter} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 
 import Intro from '../Components/Intro/Intro';
 import Projects from '../Components/Projects/Projects';
@@ -13,18 +13,11 @@ import { GlobalContext } from '../Context/GlobalContext';
 
 
 function App() {
-  const history = useHistory();
 
   let myContext = useContext(GlobalContext);
 
   const [showIntermission, updateShowIntermission] = useState(false);
 
-
-  const pageTransitionTrigger = () =>
-  {
-    console.log('triggered!!');
-    updateShowIntermission(!showIntermission);
-  }
 
   useEffect(()=>{
     myContext.setPageTransition(() => updateShowIntermission(!showIntermission));
@@ -32,7 +25,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <button onClick = {() => updateShowIntermission(!showIntermission)}>transition</button> */}
       <CSSTransition 
         in = {showIntermission}
         timeout = {750}

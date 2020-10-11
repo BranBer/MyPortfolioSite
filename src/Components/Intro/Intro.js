@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './Intro.module.scss';
-import {Link} from 'react-router-dom';
-import Intermission from '../Intermission/Intermission';
 import GlobalNav from '../GlobalNav/GlobalNav';
 
 const Intro = (props) =>
@@ -35,10 +33,10 @@ const Intro = (props) =>
 
                 {/*Social Media Links*/}
                 <div className = {styles.SocialMediaContainer}>
-                    <a href = {linkedinurl} target = "_blank"><div className = {styles.SocialMediaIcon} id = {styles.linkedin} /></a>
-                    <a href = {facebookurl} target = "_blank"><div className = {styles.SocialMediaIcon} id = {styles.facebook}/></a>
-                    <a href = {twitterurl}  target = "_blank"><div className = {styles.SocialMediaIcon} id = {styles.twitter}/></a>
-                    <a href = {githuburl}   target = "_blank"><div className = {styles.SocialMediaIcon} id = {styles.github}/></a>
+                    <a href = {linkedinurl} target = "_blank" rel="noopener noreferrer"><div className = {styles.SocialMediaIcon} id = {styles.linkedin} /></a>
+                    <a href = {facebookurl} target = "_blank" rel="noopener noreferrer"><div className = {styles.SocialMediaIcon} id = {styles.facebook}/></a>
+                    <a href = {twitterurl}  target = "_blank" rel="noopener noreferrer"><div className = {styles.SocialMediaIcon} id = {styles.twitter}/></a>
+                    <a href = {githuburl}   target = "_blank" rel="noopener noreferrer"><div className = {styles.SocialMediaIcon} id = {styles.github}/></a>
                 </div>
                 
                 <hr/>

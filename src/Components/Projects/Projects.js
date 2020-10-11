@@ -1,22 +1,17 @@
 import React, {useState, useEffect, useContext} from 'react';
 import styles from './Projects.module.scss';
-import CSSTransition from 'react-transition-group';
 
 import GlobalNav from '../GlobalNav/GlobalNav';
-import {Link} from 'react-router-dom';
 import { GlobalContext } from '../../Context/GlobalContext';
 
 import Project from '../Project/Project';
 
 const Projects = (props) =>
 {
-    let currentLocation = props.location.pathname.split('/');
-    currentLocation = currentLocation[currentLocation.length - 1];
 
     let myContext = useContext(GlobalContext);
 
     const [currentTag, updateCurrentTag] = useState('');
-    const [projects, updateProjects] = useState([...myContext.projects]);
     
     const filterProjects = (filter) =>
     {
@@ -29,18 +24,17 @@ const Projects = (props) =>
             }
         });
 
-        updateProjects(newProjects);
     }
 
     useEffect(() => 
     {
         filterProjects(); 
-    }, []);
+    });
 
     let showProjects = myContext.projects.map(
         (project, index) =>{           
 
-            if(project.tags.indexOf(currentTag) !== -1 || currentTag == '')
+            if(project.tags.indexOf(currentTag) !== -1 || currentTag === '')
             {
                 return (<Project key = {"project" + index} 
                                  id = {project.title}
@@ -50,6 +44,8 @@ const Projects = (props) =>
                                  githubLinks = {project.github}
                                  coverImage = {project.coverImage}/>);
             }
+
+            return null;
     });
 
 

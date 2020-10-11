@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useContext} from 'react';
 import {GlobalContext} from '../../Context/GlobalContext';
 import styles from './Skills.module.scss';
 
@@ -27,7 +27,7 @@ const Skills = (props) =>
                                 
                                 return(
                                     <div className = {styles.College} key = {'college' + index + college.name}>
-                                        <img src = {require(`../../assets/${college.image}`)}/>
+                                        <img src = {require(`../../assets/${college.image}`)} alt = "college"/>
 
                                         <div className = {styles.CollegeDetails}> 
 

@@ -1,12 +1,10 @@
-import React, {useState, useEffect, useContext} from 'react';
-import {GlobalContext} from '../../Context/GlobalContext';
+import React from 'react';
 import styles from './Contact.module.scss';
 
 import GlobalNav from '../GlobalNav/GlobalNav';
 
 const Contact = () =>
 {
-    let myContext = useContext(GlobalContext);
 
     return(
         <div className = {styles.ContactContainer}>

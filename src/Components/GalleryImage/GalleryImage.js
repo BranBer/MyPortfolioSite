@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState} from 'react';
 import './GalleryImage.scss';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
@@ -34,11 +34,14 @@ const GalleryImage = (props) =>
                         
                         <img 
                             className = {'CurrentImage'}
-                            src = {require(`../../assets/${object}`)} />
+                            src = {require(`../../assets/${object}`)} 
+                            alt = ""/>
                     </div>
 
                 </CSSTransition>)
         }
+
+        return null;
     });
 
     return (
