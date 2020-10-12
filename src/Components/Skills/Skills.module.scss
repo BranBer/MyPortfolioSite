@@ -49,6 +49,7 @@
         color: $base-color;
         background-color: rgba(0, 0, 0, .75);
         overflow-y: scroll;
+        padding: 2em;
 
         display: flex;
         flex-direction: column;
@@ -57,7 +58,7 @@
         h2{
             font-size:  14vw;
             font-weight: 100;
-            margin: .5em 0 0 0;
+            margin: 0 0 0 0;
             
         }
 
