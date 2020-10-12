@@ -180,6 +180,9 @@
 
         hr{
             width: 90%;
+            border-top: 1px solid $base-color;
+            margin: 2em;
+            width: 70%;
         }
     }
 
@@ -196,14 +199,17 @@
                 width: 100%;
                 font-size: 3vw;
             }
-    
-            hr{
-                width: 90%;
-            }
 
             .ImageContainer{
                 width: 37.5%;
                 padding-bottom: 37.5%;
+            }
+
+            hr{
+                width: 90%;
+                border-top: 1px solid $base-color;
+                margin: 2em;
+                width: 70%;
             }
         }
     

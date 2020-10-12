@@ -124,7 +124,7 @@
                         font-size: 24px;
                         width: 100%;
                         color:black;
-                        padding: .5em 0 .5em 0;
+                        padding: .5em 0 .5em .5em;
                         background-color: $base-color;
 
                         @media only screen and (max-width: 768px) {
@@ -150,12 +150,22 @@
 
                         .CollegeRowData{
                             width: 70%;
+                            
                         }
 
                         span{
                             text-align: left;
                             font-weight: 400;
                             width: 50%;
+                        }
+
+                        @media only screen and (max-width: 768px) {
+                            display: flex;
+                            flex-flow: column nowrap;
+
+                           span{
+                               margin-left: 1em;
+                           }
                         }
 
                     }
