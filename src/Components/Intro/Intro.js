@@ -13,7 +13,7 @@ const Intro = (props) =>
             
             {/*Main Div*/}
             <div className = {styles.IntroContent}>
-                <h1>BRANDON.IO</h1>
+                <h1>BRANBER.IO</h1>
                 
                 <p>
                     Hello! My name is Brandon. I am a New York based freelance web developer,
