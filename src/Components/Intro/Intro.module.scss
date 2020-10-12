@@ -35,13 +35,14 @@
 
 .IntroContent{
     //color: lightgoldenrodyellow;
-    padding: 0 2em 2em 2em;
+    padding: 2em 2em 2em 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: flex-start;
     width: 40%;
+    height: 100%;
     color: $base-color;
     font-family: $primary-font;
     row-gap: 1em;
@@ -52,9 +53,9 @@
 
     
     h1{
-        font-size: 100px;
+        font-size: 4vw;
         font-weight: 150;
-        margin: .75em 0 0 0;
+        margin: 0 0 0 0;
         transition: font-size 1s ease-in-out;
     }
 
@@ -169,7 +170,7 @@
         width: 60%;
         h1
         {
-            font-size: 90px;
+            font-size: 8vw;
         }
 
         p{
