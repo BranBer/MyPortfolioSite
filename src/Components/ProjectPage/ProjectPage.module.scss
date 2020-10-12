@@ -33,7 +33,6 @@
 
     .ProjectPageContent{
         width:75%;
-        min-width: 600px;
         background-color: rgba(0,0,0,.75);
         padding: 1em;
         overflow-y: scroll;
@@ -195,6 +194,10 @@
                 }
             }
            
+        }
+
+        @media only screen and (max-width: 768px) {
+            width: 100%;
         }
         
     }

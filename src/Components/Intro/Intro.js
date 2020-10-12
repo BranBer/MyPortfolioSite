@@ -42,25 +42,8 @@ const Intro = (props) =>
                 <hr/>
 
                 {/*Nav Bar*/}
-                <div className = {styles.NavBar}>
-                    {/* <Link to = '/' style = {{textDecoration: 'none'}}>
-                        <span className = {styles.NavOption}>HOME</span>
-                    </Link>
 
-                    <Link to = '/projects' style = {{textDecoration: 'none'}}>
-                        <span className = {styles.NavOption}>PROJECTS</span>
-                    </Link>
-
-                    <Link to = '/skills' style = {{textDecoration: 'none'}}>
-                        <span className = {styles.NavOption}>SKILLS</span>
-                    </Link>
-
-                    <Link to = '/contact' style = {{textDecoration: 'none'}}>
-                        <span className = {styles.NavOption}>CONTACT</span>
-                    </Link> */}
-                    <GlobalNav/>
-                    
-                </div>
+                <GlobalNav/>
                 <br/>
             </div>
         </div>

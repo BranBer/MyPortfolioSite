@@ -127,6 +127,11 @@
                         color:black;
                         padding: .5em 0 .5em 0;
                         background-color: $base-color;
+
+                        @media only screen and (max-width: 768px) {
+                            font-size: 2.5vw;
+                            font-weight: bold;
+                        }
                     }
 
                     hr{
@@ -209,11 +214,20 @@
                 }            
             }
         }
-    }
+    }    
 
-
-
-    
     
 }
 
+
+@media only screen and (max-width: 768px) {
+        
+    .Education .College .CollegeDetails .CollegeName label{
+        font-size: 12px;
+    }
+
+    .CollegeDetailsRow{
+        font-size: 2vw;
+    }
+
+}

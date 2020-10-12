@@ -7,7 +7,6 @@
 }
 
 .ProjectsContainer{
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,10 +33,11 @@
     .ProjectsBackground{
         height: 100%;
         width: 75%;
+        padding: 1em;
         
         position: relative;
         background-color: rgba(0,0,0,0.75);
-        min-width: 700px;
+        //min-width: 700px;
         position: fixed;
         display: flex;
         flex-direction: row;
@@ -114,9 +114,13 @@
         
         
     }
+
+    @media only screen and (max-width: 768px) {
+        .ProjectsBackground{
+            width: 100%;
+        }
+    }
 }
 
-@media only screen and (max-width: 1200px) {
-    
-}
+
 

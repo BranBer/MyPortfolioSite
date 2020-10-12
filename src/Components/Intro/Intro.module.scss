@@ -35,7 +35,7 @@
 
 .IntroContent{
     //color: lightgoldenrodyellow;
-    padding: 0 2em 1em 2em;
+    padding: 0 2em 2em 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +46,7 @@
     font-family: $primary-font;
     row-gap: 1em;
     
-    min-width: 600px;
+    //min-width: 600px;
 
     background-color: rgba(0,0,0,.6);
 
@@ -182,4 +182,29 @@
         }
     }
 
+
+    @media only screen and (max-width: 768px) {    
+        .IntroContent{
+            width: 100%;
+            h1
+            {
+                font-size: 11vw;
+            }
+    
+            p{
+                width: 100%;
+                font-size: 3vw;
+            }
+    
+            hr{
+                width: 90%;
+            }
+
+            .ImageContainer{
+                width: 37.5%;
+                padding-bottom: 37.5%;
+            }
+        }
+    
+    }
 }
