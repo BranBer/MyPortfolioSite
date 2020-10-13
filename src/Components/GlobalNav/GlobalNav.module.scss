@@ -54,7 +54,7 @@
             position: absolute;
 
             transform: translateX(110%); 
-            transition: transform .25s linear;
+            transition: transform .35s linear;
         }
 
         &:after{
@@ -68,7 +68,7 @@
             border-left: 4px solid $base-color;
 
             transform: translateY(110%);
-            transition: transform .25s linear;  
+            transition: transform .35s linear;  
         }
 
         .NavLower{
@@ -77,7 +77,7 @@
             width: 120%;
             position: absolute;
             transform: translateX(-120%);  
-            transition: transform .25s linear;  
+            transition: transform .35s linear;  
         }
 
         &:before{
@@ -91,7 +91,7 @@
             border-right: 4px solid $base-color;
 
             transform: translateY(-110%);
-            transition: transform .25s linear;
+            transition: transform .35s linear;
         }
 
         @media only screen and (max-width: 1000px) {
