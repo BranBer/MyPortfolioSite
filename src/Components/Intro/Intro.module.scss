@@ -41,12 +41,9 @@
     padding: .5em 2em 2em .5em;
     width: 50%;
     height: 100%;
-    overflow-y: scroll;
 }
 
-.IntroContent{
-    //color: lightgoldenrodyellow;
-    
+.IntroContent{    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,8 +56,8 @@
     row-gap: 1em;
     margin-top: 2em;
     
-    //min-width: 600px;
-    
+    overflow-y: scroll;
+
     h1{
         font-size: 5.5vw;
         font-weight: 150;
@@ -77,8 +74,9 @@
     hr{
         border: none;
         border-top: 1px solid $base-color;
-        margin: 2em;
-        width: 70%;
+        margin: 0;
+        padding: 0;
+        width: 90%;
         transition: width 1s ease-in-out;
     }
 
@@ -151,7 +149,7 @@
     .IntroContent{
         h1
         {
-            font-size: 6.5vw;
+            font-size: 6.2vw;
         }
     }
 }
@@ -185,8 +183,6 @@
         hr{
             width: 90%;
             border-top: 1px solid $base-color;
-            margin: 2em;
-            width: 70%;
         }
     }
 
@@ -217,7 +213,8 @@
             hr{
                 width: 90%;
                 border-top: 1px solid $base-color;
-                margin: 2em;
+                margin: 0;
+                padding: 0;
                 width: 70%;
             }
         }
