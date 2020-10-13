@@ -37,7 +37,7 @@
     flex-direction: column;
     align-items: center;
     background-color: rgba(0,0,0,.6);
-    padding: 2em 2em 2em 2em;
+    padding: 0 2em 2em 0;
     width: 50%;
 }
 
@@ -148,7 +148,7 @@
     .IntroContent{
         h1
         {
-            font-size: 7vw;
+            font-size: 6.75vw;
         }
     }
 }
@@ -171,7 +171,7 @@
         width: 100%;
         h1
         {
-            font-size: 7vw;
+            font-size: 6.75vw;
         }
 
         p{
