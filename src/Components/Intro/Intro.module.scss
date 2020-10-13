@@ -40,7 +40,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: flex-start;
+    justify-content: space-around;
     width: 40%;
     height: 100%;
     color: $base-color;
@@ -53,7 +53,7 @@
 
     
     h1{
-        font-size: 4vw;
+        font-size: 5vw;
         font-weight: 150;
         margin: 0 0 0 0;
         transition: font-size 1s ease-in-out;
@@ -74,9 +74,9 @@
     }
 
     .ImageContainer{
-        width: 15em;
+        width: 17.5em;
         height: 0;
-        padding-bottom: 15em;
+        padding-bottom: 17.5em;
         background-image: linear-gradient(0deg, rgba(0, 17, 255, .25), rgba(0, 17, 255, .25)), 
         url('../../assets/brandon.jpg');
         background-blend-mode: difference;
@@ -170,7 +170,7 @@
         width: 60%;
         h1
         {
-            font-size: 8vw;
+            font-size: 7vw;
         }
 
         p{

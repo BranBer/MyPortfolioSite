@@ -100,6 +100,26 @@
             .NavOption{
                 font-size: 1.8vw;
             }
+
+            &:hover{
+                .NavUpper{
+                    display: none;
+                }
+    
+                &:after{
+                    display: none;
+                }
+    
+                .NavLower{
+                    display: none; 
+                }
+    
+                &:before{
+                    display: none;
+                }
+            }
+               
+            
         }
     }
     }
