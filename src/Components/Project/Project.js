@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import styles from './Project.module.scss';
 import {Link} from 'react-router-dom';
+import { GlobalContext } from '../../Context/GlobalContext';
 
 
 
 const Project = (props) =>
 {
     const [showRedirect, updateShowRedirect] = useState(false);
+
+    let myContext = useContext(GlobalContext);
     let image = props.coverImage;
 
     return (
@@ -52,7 +55,7 @@ const Project = (props) =>
 
                 
 
-                <Link to = {"/project/" + props.title}><button>Read More</button></Link>
+                <Link to = {"/project/" + props.title}><button onClick = {() => myContext.pageTransition()}>Read More</button></Link>
             </div>
         
     </div>);

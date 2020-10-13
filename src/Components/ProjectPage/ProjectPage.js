@@ -162,7 +162,7 @@ const ProjectPage = (props) =>
 
                     <br/>
 
-                    <button onClick = {() => myHistory.goBack()}>⬅ Go Back</button>
+                    <button onClick = {() => {myHistory.goBack(); myContext.pageTransition();}}>⬅ Go Back</button>
 
                     <br/>
                 </>:
