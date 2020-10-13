@@ -38,8 +38,9 @@
     align-items: center;
     background-color: rgba(0,0,0,.6);
     justify-content: center;
-    padding: 0 2em 2em 0;
+    padding: .5em 2em 2em .5em;
     width: 50%;
+    height: 100%;
     overflow-y: scroll;
 }
 
@@ -82,9 +83,9 @@
     }
 
     .ImageContainer{
-        width: 17.5em;
+        width: 15em;
         height: 0;
-        padding-bottom: 17.5em;
+        padding-bottom: 15em;
         background-image: linear-gradient(0deg, rgba(0, 17, 255, .25), rgba(0, 17, 255, .25)), 
         url('../../assets/brandon.jpg');
         background-blend-mode: difference;
@@ -150,7 +151,7 @@
     .IntroContent{
         h1
         {
-            font-size: 6.75vw;
+            font-size: 6.5vw;
         }
     }
 }
@@ -173,7 +174,7 @@
         width: 100%;
         h1
         {
-            font-size: 6.75vw;
+            font-size: 6.5vw;
         }
 
         p{
