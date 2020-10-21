@@ -36,24 +36,39 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+        z-index: 100;
 
         animation: GalaxyRotate 240s infinite reverse linear;
+    }
+
+    .SkillsContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+        height: 100%;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, .75);
+        z-index: 200;
+
+        
     }
 
     .SkillsContent{
         z-index: 101;
         position: relative;
-        height: 100%;
+        height: 95%;
         width: 75%;
         font-family: 'Raleway';
         color: $base-color;
-        background-color: rgba(0, 0, 0, .75);
+        
         overflow-y: scroll;
-        padding: 2em;
+        padding: 0 2em 0 2em;
 
         display: flex;
         flex-direction: column;
         align-items: center;
+
 
         h2{
             font-size:  14vw;
@@ -150,8 +165,7 @@
                         }
 
                         .CollegeRowData{
-                            width: 70%;
-                            
+                            width: 70%;                            
                         }
 
                         span{
@@ -183,7 +197,8 @@
             // margin-left: 3.125%;
             // margin-right: 3.125%;
             width: 100%;
-            
+            margin-bottom: 1em;
+
             align-items: flex-start;        
     
             .Column{

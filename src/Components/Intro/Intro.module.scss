@@ -6,14 +6,11 @@
     to {background-position: 60% 60%;}
 }
 
-
-
 .IntroContainer{
-
     width: 100%;
     height: 100%;
     
-    position: absolute;
+    position: fixed;
     background-image:
     linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0, 17, 255, .7), rgba(0, 17, 255, .5)),
     url('../../assets/Galaxy.png');
@@ -31,8 +28,7 @@
     animation-timing-function: ease-in-out;
 }
 
-.IntroBackground
-{
+.IntroBackground{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,7 +44,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     height: 90%;
     color: $base-color;
@@ -59,7 +55,8 @@
     overflow-y: scroll;
 
     h1{
-        font-size: 5.5vw;
+        font-size: 6vw;
+        height: 6vw;
         font-weight: 150;
         margin: 0.25em 0 0 0;
         transition: font-size 1s ease-in-out;
@@ -148,7 +145,8 @@
     .IntroContent{
         h1
         {
-            font-size: 6.2vw;
+            font-size: 7.0vw;
+            height: 7.0vw;
         }
     }
 }
@@ -172,6 +170,7 @@
         h1
         {
             font-size: 6.5vw;
+            height: 6.5vw;
         }
 
         p{
@@ -197,6 +196,7 @@
             h1
             {
                 font-size: 11vw;
+                height: 11vw;
             }
     
             p{
