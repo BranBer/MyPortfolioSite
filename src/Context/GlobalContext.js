@@ -9,7 +9,7 @@ const GlobalProvider = (props) =>
             title: 'My Portfolio',
             url: '',
             github: ['https://github.com/BranBer/MyPortfolioSite'],
-            tags: ['frontend', 'React.js', 'python', 'HTML', 'Javascript', 'CSS',],
+            tags: ['frontend', 'React.js', 'HTML', 'Javascript', 'CSS'],
             coverImage: 'Project_Portfolio/PortfolioPic.PNG',
             images: [
                 'Project_Portfolio/portfolioProjects.PNG',
